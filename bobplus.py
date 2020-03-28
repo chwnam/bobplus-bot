@@ -17,7 +17,7 @@ def test_grab():
 
 def get_bobplus_html():
     return get_html('https://m.blog.naver.com/babplus123/221261990989')
-    
+
 
 def parse_title(soup):
     return soup.find('h3', class_='tit_h3').get_text().strip()
@@ -46,8 +46,8 @@ def trim_menu(menu_raw):
         if mk:
             output.append(
                 {
-                    'code': old_match[1],
-                    'branch': old_match[2],
+                    'code': old_match.group(1),
+                    'branch': old_match.group(2),
                     'menu': menu_raw[mk:s].strip().split('\n')
                 }
             )
